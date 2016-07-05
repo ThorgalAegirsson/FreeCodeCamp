@@ -11,75 +11,109 @@
 
 <body>
     <div class="container-fluid">
-        <nav>
-            <button>
-                <a href="#home">Home</a>
-            </button>
-            <button>
-                <a href="#about">About</a>
-            </button>
-            <button>
-                <a href="#portfolio">Portfolio</a>
-            </button>
-            <button>
-                <a href="#contact">Contact</a>
-            </button>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Collapsed toggle for mobile -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavMenu" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        Thorgal Aegirsson's Portfolio
+                    </a>
+                </div>
+
+                <!-- myNavMenu -->
+
+                <div class="collapse navbar-collapse navbar-right" id="myNavMenu">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </nav>
-        <div class="row" id="home">
-            HOME
-        </div>
-        <div class="row" id="about">
-            About
-        </div>
-        <div class="row" id="portfolio">
-            Portfolio Here are my works:
-            <div>
-                <a href="http://codepen.io/ThorgalAegirsson/pen/XKROdR" target="_blank">
-                    <img src="http://www.esar.biz/freeCodeCamp/Portfolio/1.Tribute.jpg" alt="A tribute page">
-                </a>
-            </div>
-            <div>
-                <a href="http://www.esar.us" target="_blank">
-                    <img src="http://www.esar.biz/freeCodeCamp/Portfolio/2.Esar.us.jpg" alt="ESAR Enterprises">
-                </a>
-            </div>
-            <div>
-                <a href="http://www.esar.biz" target="_blank">
-                    <img src="http://www.esar.biz/freeCodeCamp/Portfolio/3.Esar.biz.jpg" alt="ESAR.BIZ">
-                </a>
-            </div>
-            <div>
-                <a href="https://www.maidsmarket.com" target="_blank">
-                    <img src="http://www.esar.biz/freeCodeCamp/Portfolio/4.Maidsmarket.jpg" alt="Maidsmarket.com">
-                </a>
-            </div>
-        </div>
-        <div class="row" id="contact">
-            Contact
+        <div class="myContent">
 
-             <p>Here you can find me:</p>
-             <ul>
-                 <li><a href="https://github.com/ThorgalAegirsson" target="_blank">Github</a></li>
-                 <li><a href="http://codepen.io/ThorgalAegirsson" target="_blank">CodePen</a></li>
-                 <li><a href="https://www.freecodecamp.com/thorgalaegirsson" target="_blank">freeCodeCamp</a></li>
-                 <li><a href="https://twitter.com/ESARenterprises" target="_blank">Twitter</a></li>
-                 <li><a href="https://www.linkedin.com/in/radekszumski" target="_blank">LinkedIn</a></li>
-                 <li><a href="http://www.esar.us/contact.html" target="_blank">ESAR Enterprises</a></li>
-             </ul>
-    
-    
-    
-    
-    
-        </div>
-        <footer>
 
-        </footer>
+
+
+
+
+            <div class="row" id="home">
+                HOME
+            </div>
+            <div class="row" id="about">
+                About
+            </div>
+            <div class="row" id="portfolio">
+                Portfolio Here are my works:
+                <div>
+                    <a href="http://codepen.io/ThorgalAegirsson/pen/XKROdR" target="_blank">
+                        <img src="http://www.esar.biz/freeCodeCamp/Portfolio/1.Tribute.jpg" alt="A tribute page">
+                    </a>
+                </div>
+                <div>
+                    <a href="http://www.esar.us" target="_blank">
+                        <img src="http://www.esar.biz/freeCodeCamp/Portfolio/2.Esar.us.jpg" alt="ESAR Enterprises">
+                    </a>
+                </div>
+                <div>
+                    <a href="http://www.esar.biz" target="_blank">
+                        <img src="http://www.esar.biz/freeCodeCamp/Portfolio/3.Esar.biz.jpg" alt="ESAR.BIZ">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.maidsmarket.com" target="_blank">
+                        <img src="http://www.esar.biz/freeCodeCamp/Portfolio/4.Maidsmarket.jpg" alt="Maidsmarket.com">
+                    </a>
+                </div>
+            </div>
+            <div class="row" id="contact">
+                Contact
+
+                <p>Here you can find me:</p>
+                <ul>
+                    <li><a href="https://github.com/ThorgalAegirsson" target="_blank">Github</a></li>
+                    <li><a href="http://codepen.io/ThorgalAegirsson" target="_blank">CodePen</a></li>
+                    <li><a href="https://www.freecodecamp.com/thorgalaegirsson" target="_blank">freeCodeCamp</a></li>
+                    <li><a href="https://twitter.com/ESARenterprises" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/in/radekszumski" target="_blank">LinkedIn</a></li>
+                    <li><a href="http://www.esar.us/contact.html" target="_blank">ESAR Enterprises</a></li>
+                </ul>
+
+
+
+
+
+            </div>
+            <footer>
+
+            </footer>
+        </div>
     </div>
 
 
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script>
 
-   
+
+
+
 
 </body>
 
