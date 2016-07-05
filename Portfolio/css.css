@@ -1,19 +1,47 @@
-.myContent {
-    margin-top: 50px;
+body {
+    
 }
 
-h2 {
+.myContent {
+    margin-top: 50px;
+    text-align: center;
+    font-family: "'Times New Roman', Times, serif";
+}
 
+h1 {
+    font-size: 4em;
+    font-weight: bolder;
+}
+h2{
+    font-size: 3em;
+    text-decoration: underline; 
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2em;
+    font-weight: bold;
+}
+h2, h1, h3 {
+    font-variant: small-caps;
+    margin-top: 75px;
 }
 
 footer p{
     color:gray;
 }
 
+.regularText {
+    margin-top: 50px;
+    max-width: 900px;
+    font-size: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
 .pictures {
-    width: 80vw;
-    margin-left: 10vh;
-    margin-right: 10vh;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #home{
@@ -21,17 +49,16 @@ footer p{
     background-color: white;
     background-image: url('img/home.jpg');
     background-attachment: fixed;
+    background-position: 50% 50%;
     min-height: 75vh;
     color: black;
-    text-align: center;
 }
 #about {
     background-color: white;
     background-image: url('img/about.jpg');
     background-attachment: fixed;
     min-height: 75vh;
-    color: black;
-    text-align: center;
+    color: white;
 }
 #portfolio {
     background-color: darkgray;
@@ -39,11 +66,10 @@ footer p{
     background-attachment: fixed;
     min-height: 75vh;
     color: white;
-    text-align: center;
 }
 
 #portfolio div {
-    float: left;
+    display: inline-block;
     margin: 25px;
 
 }
@@ -63,4 +89,26 @@ footer p{
     background-color: lightgray;
     color: darkgray;
     border-radius: 5px;
+    margin: 10px 20px 10px 20px;
+}
+.buttons {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+button {
+    position: relative;
+}
+
+#contact button:hover {
+    left: 4px;
+    bottom: 4px;
+    background-color: darkgray;
+    color: black;
+}
+button>a:hover {
+    text-decoration: none;
+    color: black
 }
