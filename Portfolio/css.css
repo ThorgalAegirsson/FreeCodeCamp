@@ -1,3 +1,66 @@
 .myContent {
-    margin-top: 60px;
+    margin-top: 50px;
+}
+
+h2 {
+
+}
+
+footer p{
+    color:gray;
+}
+
+.pictures {
+    width: 80vw;
+    margin-left: 10vh;
+    margin-right: 10vh;
+}
+
+#home{
+    padding: 20px;
+    background-color: white;
+    background-image: url('img/home.jpg');
+    background-attachment: fixed;
+    min-height: 75vh;
+    color: black;
+    text-align: center;
+}
+#about {
+    background-color: white;
+    background-image: url('img/about.jpg');
+    background-attachment: fixed;
+    min-height: 75vh;
+    color: black;
+    text-align: center;
+}
+#portfolio {
+    background-color: darkgray;
+    background-image: url('img/portfolio.jpg');
+    background-attachment: fixed;
+    min-height: 75vh;
+    color: white;
+    text-align: center;
+}
+
+#portfolio div {
+    float: left;
+    margin: 25px;
+
+}
+
+#contact {
+    min-height: 75vh;
+    background-color: white;
+    background-image: url('img/contact.jpg');
+    background-attachment: fixed;
+    background-position: left top;
+}
+
+#contact button {
+    font-size: 2em;
+    width: 250px;
+    border: 2px solid gray;
+    background-color: lightgray;
+    color: darkgray;
+    border-radius: 5px;
 }

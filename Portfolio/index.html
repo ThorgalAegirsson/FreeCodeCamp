@@ -11,6 +11,9 @@
 
 <body>
     <div class="container-fluid">
+        
+        <!-- NavBar -->
+        
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <!-- Collapsed toggle for mobile -->
@@ -47,13 +50,10 @@
 
             </div>
         </nav>
+
+        <!-- End of NavBar -->
+
         <div class="myContent">
-
-
-
-
-
-
             <div class="row" id="home">
                 HOME
             </div>
@@ -61,8 +61,10 @@
                 About
             </div>
             <div class="row" id="portfolio">
-                Portfolio Here are my works:
-                <div>
+                <h2>Portfolio</h2>
+                <h3>Here is some of my work:</h3>
+                <div class="pictures">
+                    <div>
                     <a href="http://codepen.io/ThorgalAegirsson/pen/XKROdR" target="_blank">
                         <img src="http://www.esar.biz/freeCodeCamp/Portfolio/1.Tribute.jpg" alt="A tribute page">
                     </a>
@@ -82,27 +84,31 @@
                         <img src="http://www.esar.biz/freeCodeCamp/Portfolio/4.Maidsmarket.jpg" alt="Maidsmarket.com">
                     </a>
                 </div>
+                </div>
             </div>
             <div class="row" id="contact">
                 Contact
 
                 <p>Here you can find me:</p>
-                <ul>
-                    <li><a href="https://github.com/ThorgalAegirsson" target="_blank">Github</a></li>
-                    <li><a href="http://codepen.io/ThorgalAegirsson" target="_blank">CodePen</a></li>
-                    <li><a href="https://www.freecodecamp.com/thorgalaegirsson" target="_blank">freeCodeCamp</a></li>
-                    <li><a href="https://twitter.com/ESARenterprises" target="_blank">Twitter</a></li>
-                    <li><a href="https://www.linkedin.com/in/radekszumski" target="_blank">LinkedIn</a></li>
-                    <li><a href="http://www.esar.us/contact.html" target="_blank">ESAR Enterprises</a></li>
-                </ul>
+                <div class="col-xs-1 col-md-3 col-xs-lg-4">
+                    <button><a href="https://github.com/ThorgalAegirsson" target="_blank">Github</a></button>
+                    <button><a href="http://codepen.io/ThorgalAegirsson" target="_blank">CodePen</a></button>
+                    <button><a href="https://www.freecodecamp.com/thorgalaegirsson" target="_blank">freeCodeCamp</a></button>
+                    <button><a href="https://twitter.com/ESARenterprises" target="_blank">Twitter</a></button>
+                    <button><a href="https://www.linkedin.com/in/radekszumski" target="_blank">LinkedIn</a></button>
+                    <button><a href="http://www.esar.us/contact.html" target="_blank">ESAR</a></button>
+                </div>
 
 
 
 
 
             </div>
-            <footer>
-
+            <footer class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container-fluic">
+                    <p></p>
+                    <p class="text-center">&copy 2016 Thorgal Aegirsson</p>
+                </div>
             </footer>
         </div>
     </div>
