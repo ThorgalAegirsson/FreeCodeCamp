@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caesars Cipher</title>
+    <style>
+        body {
+            margin: 20px;
+        }
+        #output {
+            margin-top: 20px;
+            width: 329px;
+            height: 150px;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        h1 {
+            text-decoration: underline;
+        }
+        button {
+            background-color: lightblue;
+            border: 1px solid blue;
+            border-radius: 5px;
+            width: 130px;
+        }
+        #txtInp {
+            border-radius: 5px;
+            width: 200px;
+        }
+    </style>
+    <script src="js.js"></script>
+</head>
+<body>
+    <h1>Caesars Cipher</h1>
+    <label for="clearTxt">
+        <input id='txtInp' type="text" placeholder="Enter text to encode">
+    </label>
+    <button id="changeBtn">Encode/Decode</button>
+    <div id="output">
+        Encoded text here...
+    </div>
+    
+</body>
+</html>

@@ -47,7 +47,7 @@ footer p{
 #home{
     padding: 20px;
     background-color: white;
-    background-image: url('img/home.jpg');
+    background-image: url('http://www.esar.biz/freeCodeCamp/Portfolio/img/home.jpg');
     background-attachment: fixed;
     background-position: 50% 50%;
     min-height: 75vh;
@@ -55,14 +55,14 @@ footer p{
 }
 #about {
     background-color: white;
-    background-image: url('img/about.jpg');
+    background-image: url('http://www.esar.biz/freeCodeCamp/Portfolio/img/about.jpg');
     background-attachment: fixed;
     min-height: 75vh;
     color: white;
 }
 #portfolio {
     background-color: darkgray;
-    background-image: url('img/portfolio.jpg');
+    background-image: url('http://www.esar.biz/freeCodeCamp/Portfolio/img/portfolio.jpg');
     background-attachment: fixed;
     min-height: 75vh;
     color: white;
@@ -77,7 +77,7 @@ footer p{
 #contact {
     min-height: 75vh;
     background-color: white;
-    background-image: url('img/contact.jpg');
+    background-image: url('http://www.esar.biz/freeCodeCamp/Portfolio/img/contact.jpg');
     background-attachment: fixed;
     background-position: left top;
 }
