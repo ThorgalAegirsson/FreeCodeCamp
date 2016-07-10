@@ -1,0 +1,31 @@
+body {
+    padding: 10px;
+    width: 100vw;
+}
+
+h1 {
+    text-align: center;
+}
+
+#box {
+    width: 400px;
+}
+
+div>#nextBtn {
+    width: 75px;
+    /*margin-left: auto;
+    margin-right: auto;*/
+}
+
+#box {
+    margin-left: auto;
+    margin-right: auto;
+}
+#quoteBox>p:nth-child(2){
+    float:right;
+}
+#twitter {
+    clear: both;
+}
+
+
