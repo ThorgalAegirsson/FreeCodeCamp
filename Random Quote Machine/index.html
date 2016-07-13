@@ -6,44 +6,44 @@
     <title>Random Quote Machine</title>
     <link rel="stylesheet" href="css.css">
     <script src="quotes.js"></script>
-    <script src="js.2.js"></script>
+    <script src="js.js"></script>
 </head>
 
 <body>
-    <h1>Random Quote Machine</h1>
-    <div id="box">
-        <div id="quoteBox">
-            <p></p>
-            <p></p>
+    <div class="version">Version 2.0</div>
+    <div class="container">
+        <h1>Random Quote Machine</h1>
+        <div id="box">
+            <div id="quoteBox">
+                <p></p>
+                <p></p>
+            </div>
+            <div class="clear"></div>
         </div>
-        <div class="clear"></div>
+        <div>
+            <button id="nextBtn">Next quote</button>
+        </div>
+        <div id="twitter">
+            <a class="tweetBtn" target="_blank"><button>Tweet it</button></a>
+        </div>
+        <div class="bottomMsg">
+            <div class='consoleBtn'>
+                <button id="consoleBtn">Console info</button>
+            </div>
+            <div class="console">
+              Ajax failed, fallback to local quotes.
+            </div>
+        </div>
+        <div class="source">Quotes delivered by <a href="http://www.wikiquote.org">WikiQuote</a></div>
+    </div>
 
-    </div>
-    <div>
-        <button id="nextBtn">Next quote</button>
-    </div>
-    <div id="twitter">
-        <a class="tweetBtn" target="_blank"><button>Tweet it</button>
-        </a>
-        <br>
-
-    </div>
-    <div class="bottomMsg">
-        <div class='consoleBtn'>
-            <button id="consoleBtn">Console info</button>
-        </div>
-        <div class="console">
-            <div class="fallback">Ajax failed, fallback to local quotes.</div>
-        </div>
-        
-        <div class="footnote">
-            Quotes delivered by <a href="http://www.wikiquotes.org">WikiQuotes</a>
-        </div>
+    <div class="copyright">
+        <hr> 2016 &copy; Thorgal Aegirsson
     </div>
 
     <script src="jquery-3.0.0.min.js"></script>
     <script src="wikiAPI.js"></script>
-    
+
 </body>
 
 </html>

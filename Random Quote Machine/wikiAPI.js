@@ -11,6 +11,9 @@ var wikiQuoteAPI = (function(){
          };
 
          var selectQuote = function(quotes){
+             
+             console.log('final api function:');
+             console.log(quotes);
              success({
                  author: quotes.titles,
                  quote: quotes.quotes[Math.floor(Math.random()*quotes.quotes.length)]
@@ -19,6 +22,8 @@ var wikiQuoteAPI = (function(){
 
          var getQuotes = function(pageID, sections){
              api.getQuotesForSection(pageID, sections.sections[Math.floor(Math.random()*sections.sections.length)], selectQuote, error);
+             //this API function sometimes takes a very long time to process 
+             // FIX THIS !!!
          };
 
          var getSections = function(pageID) {
@@ -49,6 +54,8 @@ var wikiQuoteAPI = (function(){
             },
 
             success: function (result, status) {
+                console.log('first result from query:');
+                console.log(result);
                 var pages = result.query.pages;
                 var pageId = -1;
                 for (var p in pages) {
@@ -92,6 +99,8 @@ var wikiQuoteAPI = (function(){
             },
 
             success: function (result, status) {
+                console.log('second result from getSectionsForPage:');
+                console.log(result);
                 var sectionArray = [];
                 var sections = result.parse.sections;
                 for (var s in sections) {
@@ -146,6 +155,8 @@ var wikiQuoteAPI = (function(){
             },
 
             success: function (result, status) {
+                console.log('third result from getQuotesforSection:');
+                console.log(result);
                 var quotes = result.parse.text["*"];
                 var quoteArray = []
 
