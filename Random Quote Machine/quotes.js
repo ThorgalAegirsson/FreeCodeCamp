@@ -23,5 +23,8 @@ var quoteList = [
             author: "Albert Einstein",
             quote: "Creativity is seeing what others see and thinking what no one else has ever thought."
         },
-        
     ];
+
+var authorList = [
+    'Einstein', 'Franklin', 'Bruce Lee', 'Abraham Lincoln', 'Alexander Hamilton'
+]
