@@ -63,11 +63,10 @@
             // WIKIQUOTE AJAX
             wikiQuoteAPI.getRandomQuote(authorList[Math.floor(Math.random() * authorList.length)],
                 function (quote) { // success
-                    // quote = JSON.parse(xhr.responseText).contents.quotes[0];
                     source.style.display = 'block';
                     bottomMsg.style.display = 'none';
                     displayQuote(quote, quoteBox);
-                    tweetBtn.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(quote.quote.substr(0, 118 - received.author.length) + '-' + quote.author) + '&via=ESAREnterprises&related=freecodecamp';
+                    tweetBtn.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(quote.quote.substr(0, 118 - quote.author.length) + '-' + quote.author) + '&via=ESAREnterprises&related=freecodecamp';
                 },
                 function (msg) { //failure
                     quote = quoteList[pickRndm(quoteList.length)];
