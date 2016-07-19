@@ -72,7 +72,7 @@
             //      ask for a city ('we couldn't locate, try entering the city below')
             //  b. if no city give msg that you can't determine location so sorry  no weather
             //      if you change your city go to settings and enter it again
-
+        }
 
 
         var API_KEY = '6f86a5bd833343a837bfe5800ee695c4';
