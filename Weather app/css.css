@@ -15,6 +15,18 @@ h1 {
 footer {
     font-size: 0.6em;
 }
+/* NETWORK STATUS classes */
+.networkStatus {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 1px solid black;
+    width: 100px;
+    background: none !important;
+    padding: 5px;
+    margin: 10px;
+}
+
 .netStatus {
     display: inline-block;
 }
@@ -31,13 +43,26 @@ footer {
 .online {
     background-color: green;
     color: green;
+    border-color: green;
 }
 
 .offline {
     background-color: red;
     color: red;
+    border-color: red;
 }
 
 div>div.netStatus {
     background: none;
+}
+/* end of NETWORK STATUS classes */
+
+form {
+    display: none;
+}
+
+form.showForm {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

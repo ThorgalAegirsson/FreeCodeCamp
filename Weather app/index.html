@@ -7,17 +7,17 @@
     <script src="js.js"></script>
 </head>
 <body>
-    <h1>Weather app</h1>
-    <div>
+    <div class="networkStatus">
         <div class="light"></div>
         <div class="netStatus"></div>
-        <!--
-            ONLINE/OFFLINE status 
-            if online - green light, maybe online text
-            if offline - red light, maybe offline text
-        -->
-
     </div>
+    <div class="date">Updated as of <span id="checkDate"></span></div>
+    
+
+    <h1>Weather app</h1>
+    <form action="#">
+        <label>Enter your city: <input type="text" id="city"></label>
+    </form>
     <div>
         <p class="city"></p>
     </div>
