@@ -2,65 +2,52 @@
     'use strict';
 
     function init() {
+        console.log('JS loaded');
         //retrieve DOM elements
 
         //set highest scope variables
         var latitude, longitude, city;
 
-        console.log('JS loaded');
+        //initialization
         document.getElementById('checkDate').textContent = myTime();
-        // check if online
-        // if not say this and exit
-        window.addEventListener('online', testOnline);
-        window.addEventListener('offline', testOnline);
-        var networkStatus = testOnline();
-        function testOnline() {
-            var online = navigator.onLine ? "online" : "offline";
-            document.getElementsByClassName('light')[0].classList.toggle(online);
-            document.getElementsByClassName('networkStatus')[0].classList.toggle(online);
-            document.getElementsByClassName('netStatus')[0].textContent = online.toUpperCase();
+        testOnline();
 
-            return (online === 'online');
+        function geoSuccessful(position) {
+            // success function
+            // FOR SOME REASON IE and EDGE ALWAYS GET GEO EVEN IF I REFUSE !!!!!
+            console.log('geolocation successful, commencing weather update');
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            updateWeather(latitude, longitude);
         }
 
-        if (!networkStatus) {
-            document.getElementsByClassName('weather')[0].textContent = 'You are offline. We can\'t check the weather';
-        } else {
+        function geoFailed() {
+            // geolocation failed - eg. the user rejected the request
+            console.log('geolocation present but failed');
+            document.getElementsByTagName('form')[0].classList.add('showForm');
+            document.getElementsByTagName('form')[0].onsubmit = function () {
+                city = document.getElementById('city').value;
+                document.getElementsByTagName('form')[0].classList.remove('showForm');
+            };
+        }
 
-            geolocate();
-            if (latitude) {
-                console.log('latitude: ' + latitude);
-                console.log('longitude: ' + longitude);
-            } else {
-                console.log('city: ' + city);
-            }
-
-            //
-            // 2. OpenWeather API
+        function updateWeather(latitude, longitude) {
+            // add city as a failover parameter
+            console.log('updateWeather started');
 
 
         }
+
 
         function geolocate() {
             if (navigator.geolocation) {
-                console.log('geolocation enabled');
-                navigator.geolocation.getCurrentPosition(function (position) {
-                    //success function
-// FOR SOME REASON IE and EDGE ALWAYS GET GEO EVEN IF I REFUSE !!!!!
-                    latitude = position.coords.latitude;
-                    longitude = position.coords.longitude;
-                    console.log(latitude);
-                }, function () {
-                    //geolocation failed - eg. the user rejected the request
-                    console.log('geolocation enabled but failed');
-                    document.getElementsByTagName('form')[0].classList.add('showForm');
-                    document.getElementsByTagName('form')[0].onsubmit = function () {
-                        city = document.getElementById('city').value;
-                        document.getElementsByTagName('form')[0].classList.remove('showForm');
-                    };
-                });
+                console.log('geolocation present');
+                navigator.geolocation.getCurrentPosition(geoSuccessful, geoFailed);
             } else {
-                cnosole.log('no geolocation');
+                console.log('no geolocation support');
+                // move this to a separate function
+                // there's no geolocation so enable the form and ask for the city
+                // then move to updateWeather() function with the city as a parameter
                 document.getElementsByTagName('form')[0].classList.toggle('showForm');
                 document.getElementsByTagName('form')[0].onsubmit = function () {
                     city = document.getElementById('city').value;
@@ -75,22 +62,48 @@
         }
 
 
-        var API_KEY = '6f86a5bd833343a837bfe5800ee695c4';
-        var API_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude;
+        
 
 
         // HELPER functions
+
         // ADD DATE/TIME
         function myTime() {
             var today = new Date();
             var day = today.getDate();
             var month = today.getMonth() + 1;
-            var year = today.getFullYear();
+            var hour = today.getHours();
+            var meridiem = (hour < 12) ? 'AM' : 'PM';
+            var min = today.getMinutes();
+            hour = (meridiem === 'PM') ? hour - 12 : hour;
+            hour = (hour < 10) ? '0' + hour : hour;
+            min = (min < 10) ? '0' + min : min;
             day = (day < 10) ? '0' + day : day;
             month = (month < 10) ? '0' + month : month;
 
-            return month + '/' + day + '/' + year;
+            return month + '/' + day + '/' + today.getFullYear() + " @ " + hour + ":" + min + " " + meridiem;
         }
+
+        // Network Status
+        function testOnline() {
+            if (!navigator.onLine) {
+                document.getElementsByClassName('weather')[0].textContent = 'You are offline. We can\'t check the weather';
+            }
+
+            testOnline = function () {
+                var added = navigator.onLine ? "online" : "offline";
+                var removed = (added === 'offline') ? 'online' : 'offline';
+                document.getElementsByClassName('light')[0].classList.remove(removed);
+                document.getElementsByClassName('light')[0].classList.add(added);
+                document.getElementsByClassName('networkStatus')[0].classList.remove(removed);
+                document.getElementsByClassName('networkStatus')[0].classList.add(added);
+                document.getElementsByClassName('netStatus')[0].textContent = added.toUpperCase();
+                if (added === 'online') geolocate();
+            };
+            testOnline();
+        }
+        window.addEventListener('online', testOnline);
+        window.addEventListener('offline', testOnline);
 
     }
 
