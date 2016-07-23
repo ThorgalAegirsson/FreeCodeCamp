@@ -3,10 +3,8 @@
 
     function init() {
         console.log('JS loaded');
-        //retrieve DOM elements
-
         //set highest scope variables
-        var latitude, longitude, city;
+        var city;
 
         //initialization
         document.getElementById('checkDate').textContent = myTime();
@@ -16,12 +14,12 @@
             // success function
             // FOR SOME REASON IE and EDGE ALWAYS GET GEO EVEN IF I REFUSE !!!!!
             console.log('geolocation successful, commencing weather update');
-            latitude = position.coords.latitude;
-            longitude = position.coords.longitude;
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
             updateWeather(latitude, longitude);
         }
 
-        function geoFailed() {
+        function geoFailed() { // NOT TESTED YET
             // geolocation failed - eg. the user rejected the request
             console.log('geolocation present but failed');
             document.getElementsByTagName('form')[0].classList.add('showForm');
@@ -34,7 +32,113 @@
         function updateWeather(latitude, longitude) {
             // add city as a failover parameter
             console.log('updateWeather started');
+            //apply owAPI
+            openWeatherAPI.getByCoords(latitude, longitude, parse);
+            function parse(weather) {
+                //parse data in UI
+                //retrieve DOM elements
+                var location = document.getElementsByClassName('city')[0];
+                var description = document.getElementsByClassName('description')[0];
+                var weatherIcon = document.getElementsByClassName('icon')[0];
+                var weatherTemp = document.getElementsByClassName('temperature')[0];
+                var weatherPress = document.getElementsByClassName('pressure')[0];
+                var weatherHumid = document.getElementsByClassName('humid')[0];
+                var weatherWind = document.getElementsByClassName('wind')[0];
+                var weatherWindDeg = document.getElementsByClassName('winddeg')[0];
+                var sunrise = document.getElementsByClassName('sunrise')[0];
+                var sunset = document.getElementsByClassName('sunset')[0];
+                var celsius = document.getElementsByClassName('cels')[0];
+                var fahr = document.getElementsByClassName('fahr')[0];
 
+
+                location.textContent = weather.location.city + ', ' + weather.location.country;
+                weatherTemp.textContent = weather.tempF;
+                weatherPress.textContent = weather.pressure;
+                weatherHumid.textContent = weather.humidity;
+                weatherWind.textContent = weather.wind.speed;
+                weatherWindDeg.textContent = String.fromCharCode(10168);
+                weatherWindDeg.style.transform = 'rotate(' + (weather.wind.direction - 90) + 'deg)';
+
+
+                //background and icon
+                document.body.style.backgroundImage = generalCondition();
+                weatherIcon.src = 'http://openweathermap.org/img/w/' + weather.icon + '.png';
+
+                //sunrise and sunset
+                sunrise.textContent = UTCtoLocal(weather.sunrise);
+                sunset.textContent = UTCtoLocal(weather.sunset);
+                function UTCtoLocal(time) {
+                    var date = new Date(time * 1000);
+                    var hours = date.getHours();
+                    hours = (hours>12)?'0'+(hours-12):'0'+hours;
+                    var minutes = "0" + date.getMinutes();
+                    var seconds = "0" + date.getSeconds();
+
+                    // Will display time in 10:30:23 format
+                    var formattedTime = hours.substr(-2) + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+                    return formattedTime;
+                }
+
+                //general condition
+                function generalCondition(){
+                    var time = (weather.icon.substr(-1)==='n')?'night':'day';
+                    var descr;
+                    var condition;
+                    switch(weather.description){
+                        case 'clear sky':
+                        condition = descr = 'Clear';
+                        // descr = 'Clear';
+                        break;
+                        case 'few clouds':
+                        condition = 'Mostly-clear';
+                        descr = "Mostly clear";
+                        break;
+                        case 'scattered clouds':
+                        case 'broken clouds':
+                        condition = descr = 'Cloudy';
+                        // descr = 'Cloudy';
+                        break;
+                        case 'shower rain':
+                        case "rain":
+                        condition = descr = 'Rainy';
+                        break;
+                        case 'thunderstorm':
+                        condition = 'Thunder';
+                        descr = 'Thunderstorm';
+                        break;
+                        case 'snow':
+                        condition = descr = 'Snowy';
+                        break;
+                        case 'mist':
+                        condition = descr = 'Misty';
+                        break;
+                        default:
+                        condition = 'default';
+                        descr = 'Other';
+                        break;
+                    }
+                    description.textContent = descr;
+                    return "url('img/"+condition+"-"+time+".jpg')";
+                }
+
+                //temperature conversion
+                function convertToC(){
+                    weatherTemp.textContent = weather.tempC;
+                    celsius.classList.remove('grayedout');
+                    fahr.classList.add('grayedout');
+                }
+
+                function convertToF() {
+                    weatherTemp.textContent = weather.tempF;
+                    celsius.classList.add('grayedout');
+                    fahr.classList.remove('grayedout');
+                }
+
+                //event listeners
+                celsius.addEventListener('click', convertToC);
+                fahr.addEventListener('click', convertToF);
+
+            }
 
         }
 
@@ -43,7 +147,7 @@
             if (navigator.geolocation) {
                 console.log('geolocation present');
                 navigator.geolocation.getCurrentPosition(geoSuccessful, geoFailed);
-            } else {
+            } else { //NOT TESTED YET
                 console.log('no geolocation support');
                 // move this to a separate function
                 // there's no geolocation so enable the form and ask for the city
@@ -62,7 +166,7 @@
         }
 
 
-        
+
 
 
         // HELPER functions
@@ -70,18 +174,15 @@
         // ADD DATE/TIME
         function myTime() {
             var today = new Date();
-            var day = today.getDate();
-            var month = today.getMonth() + 1;
+            var day = '0' + today.getDate();
+            var month = '0' + (today.getMonth() + 1);
             var hour = today.getHours();
             var meridiem = (hour < 12) ? 'AM' : 'PM';
-            var min = today.getMinutes();
+            var min = '0' + today.getMinutes();
             hour = (meridiem === 'PM') ? hour - 12 : hour;
-            hour = (hour < 10) ? '0' + hour : hour;
-            min = (min < 10) ? '0' + min : min;
-            day = (day < 10) ? '0' + day : day;
-            month = (month < 10) ? '0' + month : month;
+            hour = '0' + hour;
 
-            return month + '/' + day + '/' + today.getFullYear() + " @ " + hour + ":" + min + " " + meridiem;
+            return month.substr(-2) + '/' + day.substr(-2) + '/' + today.getFullYear() + " @ " + hour.substr(-2) + ":" + min.substr(-2) + " " + meridiem;
         }
 
         // Network Status
@@ -102,8 +203,12 @@
             };
             testOnline();
         }
+
+
+        // EVENT LISTENERS
         window.addEventListener('online', testOnline);
         window.addEventListener('offline', testOnline);
+        
 
     }
 

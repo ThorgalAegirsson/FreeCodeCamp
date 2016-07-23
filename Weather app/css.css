@@ -4,12 +4,16 @@ body {
     padding: 25px;
     text-align: center;
     color: white;
-
+    background-position: center;
+    background-attachment: fixed;
 }
 
 h1 {
     font-size: 3em;
 
+}
+.date {
+    font-size: 0.5em;
 }
 
 footer {
@@ -21,10 +25,11 @@ footer {
     top: 10px;
     left: 10px;
     border: 1px solid black;
-    width: 100px;
+    width: 40px;
     background: none !important;
     padding: 5px;
     margin: 10px;
+    font-size: 0.4em;
 }
 
 .netStatus {
@@ -33,8 +38,8 @@ footer {
 
 .light {
     border-radius: 50%;
-    min-width: 10px;
-    min-height: 10px;
+    min-width: 5px;
+    min-height: 5px;
     display: inline-block;
     /*border: 1px solid yellow;*/
 
@@ -65,4 +70,21 @@ form.showForm {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.city {
+    font-size: 2em;
+}
+.temp {
+    font-size: 3em;
+    display: inline-block;
+}
+.scale {
+    display: inline-block;
+}
+.grayedout {
+    color: gray;
+}
+.winddeg {
+    display: inline-block;
+
 }

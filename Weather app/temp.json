@@ -1,0 +1,41 @@
+{
+    "coord": {
+        "lon": -73.99,
+        "lat": 40.6
+    },
+    "weather": [
+        {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04n"
+        }
+    ],
+    "base": "cmc stations",
+    "main": {
+        "temp": 296.33,
+        "pressure": 1021,
+        "humidity": 41,
+        "temp_min": 291.15,
+        "temp_max": 299.15
+    },
+    "wind": {
+        "speed": 4.6,
+        "deg": 20
+    },
+    "clouds": {
+        "all": 75
+    },
+    "dt": 1468986218,
+    "sys": {
+        "type": 1,
+        "id": 1975,
+        "message": 0.0145,
+        "country": "US",
+        "sunrise": 1469007756,
+        "sunset": 1469060499
+    },
+    "id": 5108815,
+    "name": "Bensonhurst",
+    "cod": 200
+}
