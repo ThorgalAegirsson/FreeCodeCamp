@@ -2,11 +2,35 @@ var openWeatherAPI = (function () {
     'use strict';
     var api = {};
     var API_KEY = '6f86a5bd833343a837bfe5800ee695c4';
-
+    var API_URL = 'http://api.openweathermap.org/data/2.5/weather?'
 
     //METHODS
+    api.getByCity = function(city, country, parseFunc){
+        var URL = API_URL+'q='+city+','+country+ '&APPID=' + API_KEY;
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            console.log(xhr.response);
+            parseFunc(api.process(JSON.parse(xhr.response)));
+            console.log('BY CITY FINISHED');
+        };
+        xhr.open('GET', URL,true);
+        xhr.send();
+    }
+
+    api.getByZIP = function(zip, country, parseFunc){
+        var URL = API_URL+'zip='+zip+','+country+ '&APPID=' + API_KEY;
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            console.log(xhr.response);
+            parseFunc(api.process(JSON.parse(xhr.response)));
+            console.log('BY ZIP FINISHED');
+        };
+        xhr.open('GET', URL,true);
+        xhr.send();
+    }
+
     api.getByCoords = function (latitude, longitude, parseFunc) {
-        var API_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=' + API_KEY;
+        var URL = API_URL+'lat=' + latitude + '&lon=' + longitude + '&APPID=' + API_KEY;
         var xhr = new XMLHttpRequest();
         xhr.onload = function () {
             // console.log('response: ');
@@ -15,7 +39,7 @@ var openWeatherAPI = (function () {
             // console.log(api.process(JSON.parse(xhr.response)));
             parseFunc(api.process(JSON.parse(xhr.response)));
         };
-        xhr.open('GET', API_URL, true);
+        xhr.open('GET', URL, true);
         xhr.send();
 
         //TEMPORARY WEATHER OBJECT

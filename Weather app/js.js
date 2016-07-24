@@ -29,12 +29,26 @@
             };
         }
 
+        function updateWeatherByCity(city, country){
+            console.log('updateWeatherByCity started');
+            openWeatherAPI.getByCity(city, country, parse);
+        }
+
+        function updateWeatherByZIP(location){
+            console.log('updateWeatherByZIP started');
+            
+            openWeatherAPI.getByZIP(location.postal, location.country,parse);
+            document.getElementsByClassName('city')[0].textContent = location.city+', '+location.region+', '+location.country;
+
+        }
+
         function updateWeather(latitude, longitude) {
             // add city as a failover parameter
-            console.log('updateWeather started');
-            //apply owAPI
+            console.log('updateWeather by lat/long started');
             openWeatherAPI.getByCoords(latitude, longitude, parse);
-            function parse(weather) {
+        }
+
+        function parse(weather) {
                 //parse data in UI
                 //retrieve DOM elements
                 var location = document.getElementsByClassName('city')[0];
@@ -51,7 +65,7 @@
                 var fahr = document.getElementsByClassName('fahr')[0];
 
 
-                location.textContent = weather.location.city + ', ' + weather.location.country;
+                // location.textContent = weather.location.city + ', ' + weather.location.country;
                 weatherTemp.textContent = weather.tempF;
                 weatherPress.textContent = weather.pressure;
                 weatherHumid.textContent = weather.humidity;
@@ -140,8 +154,6 @@
 
             }
 
-        }
-
 
         function geolocate() {
             if (navigator.geolocation) {
@@ -199,16 +211,41 @@
                 document.getElementsByClassName('networkStatus')[0].classList.remove(removed);
                 document.getElementsByClassName('networkStatus')[0].classList.add(added);
                 document.getElementsByClassName('netStatus')[0].textContent = added.toUpperCase();
-                if (added === 'online') geolocate();
+                // if (added === 'online') geolocate();
+                if (added === 'online') updateByZIP();
             };
             testOnline();
         }
 
+        function updateByCity(){
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function(){
+                console.log('response from ipinfo:');
+                console.log(xhr.response);
+                var response = JSON.parse(xhr.response);
+                updateWeatherByCity(response.city, response.country);
+            };
+            xhr.open('GET', 'http://ipinfo.io/json', true);
+            xhr.send();
+        }
 
+        function updateByZIP(){
+            console.log('updatebyzip');
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function(){
+                console.log('response from ipinfo:');
+                console.log(xhr.response);
+                // var response = JSON.parse(xhr.response);
+                updateWeatherByZIP(JSON.parse(xhr.response));
+            };
+            xhr.open('GET', 'http://ipinfo.io/json', true);
+            xhr.send();
+        }
         // EVENT LISTENERS
         window.addEventListener('online', testOnline);
         window.addEventListener('offline', testOnline);
-        
+        document.getElementsByClassName('byCity')[0].firstChild.addEventListener('click', updateByCity);
+        document.getElementsByClassName('byZIP')[0].firstChild.addEventListener('click',updateByZIP);
 
     }
 
