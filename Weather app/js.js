@@ -4,7 +4,7 @@
     function init() {
         console.log('JS loaded');
         //set highest scope variables
-        var city; // DO I NEED THIS??
+        //var city; // it's only for geolocation, currently not in use
 
         //initialization
         testOnline();
@@ -34,8 +34,6 @@
         // }
 
         function updateWeatherByZIP(location) {
-            console.log('updateWeatherByZIP started');
-
             openWeatherAPI.getByZIP(location.postal, location.country, parse);
             document.getElementsByClassName('city')[0].textContent = location.city + ', ' + location.region + ', ' + location.country;
 
@@ -51,15 +49,15 @@
             //parse data in UI
             //retrieve DOM elements
             var location = document.getElementsByClassName('city')[0];
-            var description = document.getElementsByClassName('description')[0];
-            var weatherIcon = document.getElementsByClassName('icon')[0];
+            // var description = document.getElementsByClassName('description')[0];
+            // var weatherIcon = document.getElementsByClassName('icon')[0];
             var weatherTemp = document.getElementsByClassName('temperature')[0];
-            var weatherPress = document.getElementsByClassName('pressure')[0];
-            var weatherHumid = document.getElementsByClassName('humid')[0];
-            var weatherWind = document.getElementsByClassName('wind')[0];
+            // var weatherPress = document.getElementsByClassName('pressure')[0];
+            // var weatherHumid = document.getElementsByClassName('humid')[0];
+            // var weatherWind = document.getElementsByClassName('wind')[0];
             var weatherWindDeg = document.getElementsByClassName('winddeg')[0];
-            var sunrise = document.getElementsByClassName('sunrise')[0];
-            var sunset = document.getElementsByClassName('sunset')[0];
+            // var sunrise = document.getElementsByClassName('sunrise')[0];
+            // var sunset = document.getElementsByClassName('sunset')[0];
             var celsius = document.getElementsByClassName('cels')[0];
             var fahr = document.getElementsByClassName('fahr')[0];
 
@@ -67,19 +65,19 @@
             if (weather.location.country !== "US") {
                 convertToC;
             }
-            weatherPress.textContent = weather.pressure;
-            weatherHumid.textContent = weather.humidity;
-            weatherWind.textContent = weather.wind.speed;
+            document.getElementsByClassName('pressure')[0].textContent = weather.pressure;
+            document.getElementsByClassName('humid')[0].textContent = weather.humidity;
+            document.getElementsByClassName('wind')[0].textContent = weather.wind.speed;
             weatherWindDeg.textContent = String.fromCharCode(10168);
             weatherWindDeg.style.transform = 'rotate(' + (weather.wind.direction - 90) + 'deg)'; //-90 because the symbol is by default turned right;
 
             //background and icon
             document.body.style.backgroundImage = generalCondition();
-            weatherIcon.src = 'http://openweathermap.org/img/w/' + weather.icon + '.png';
+            document.getElementsByClassName('icon')[0].src = 'http://openweathermap.org/img/w/' + weather.icon + '.png';
 
             //sunrise and sunset
-            sunrise.textContent = UTCtoLocal(weather.sunrise);
-            sunset.textContent = UTCtoLocal(weather.sunset);
+            document.getElementsByClassName('sunrise')[0].textContent = UTCtoLocal(weather.sunrise);
+            document.getElementsByClassName('sunset')[0].textContent = UTCtoLocal(weather.sunset);
             function UTCtoLocal(time) {
                 var date = new Date(time * 1000);
                 var hours = date.getHours();
@@ -130,8 +128,8 @@
                         descr = 'Other';
                         break;
                 }
-                description.textContent = descr;
-                return "url('img/" + condition + "-" + time + ".jpg')";
+                document.getElementsByClassName('description')[0].textContent = descr;
+                return "url('http://www.esar.biz/freeCodeCamp/weather/img/" + condition + "-" + time + ".jpg')";
             }
 
             //temperature conversion
@@ -224,12 +222,8 @@
         // }
 
         function updateByZIP() {
-            console.log('updatebyzip');
             var xhr = new XMLHttpRequest();
             xhr.onload = function () {
-                console.log('response from ipinfo:');
-                console.log(xhr.response);
-                // var response = JSON.parse(xhr.response);
                 updateWeatherByZIP(JSON.parse(xhr.response));
             };
             xhr.open('GET', 'http://ipinfo.io/json', true);
