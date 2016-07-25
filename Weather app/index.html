@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Weather app</title>
@@ -7,47 +8,57 @@
     <script src='owAPI.js'></script>
     <script src="js.js"></script>
 </head>
-<body>
-    <div class="networkStatus">
-        <div class="light"></div>
-        <div class="netStatus"></div>
-    </div>
-    
-    
-    
 
-    <h1>Weather app v.1.1</h1>
-    <form action="#">
-        <label>Enter your city: <input type="text" id="city"></label>
-    </form>
-    <div>
-        <p class="city"></p>
-    </div>
-    <div class="weather">
-        <img class="icon"><div class="temp"><span class="temperature"></span>&deg;</div>
-        <div class="scale">
-            <div class="fahr">F</div>
-            <div class="cels grayedout">C</div>
+<body>
+    <div class="container">
+
+
+
+        <div class="networkStatus">
+            <div class="light"></div>
+            <div class="netStatus"></div>
         </div>
-        <div class="description"></div>
-    </div>
-    <div class="date">Updated as of <span id="checkDate"></span></div>
-    <div class="details">
-        Pressure <span class="pressure"></span> hPa &nbsp; &nbsp; Humidity <span class="humid"></span>%<br>
-        Wind <div class="winddeg"></div> <span class="wind"></span> mph
-    </div>
-    <div class="sun">Sunrise <span class="sunrise"></span> AM &nbsp; &nbsp; Sunset <span class="sunset"></span> PM</div>
-    <div class="forecast">
-        <!--
+
+
+
+
+        <h1>Weather app v.1.1</h1>
+        <div>
+            <p class="city"></p>
+        </div>
+        <div class="weather">
+            <!--<div class="mainRow">-->
+            <!--<div class="img">
+                <div class="imgInner">
+                   
+                </div>
+            </div>-->
+            <div class="temp">
+                <img class="icon">
+                <span class="temperature"></span>&deg;
+                <div class="scale">
+                    <div class="fahr">F</div>
+                    <div class="cels grayedout">C</div>
+                </div>
+            </div>
+
+            <div class="description"></div>
+            <!--</div>-->
+        </div>
+        <div class="date">Updated as of <span id="checkDate"></span></div>
+        <div class="details">
+            Pressure <span class="pressure"></span> hPa &nbsp; &nbsp; Humidity <span class="humid"></span>%<br> Wind
+            <div class="winddeg"></div> <span class="wind"></span> mph
+        </div>
+        <div class="sun">Sunrise <span class="sunrise"></span> AM &nbsp; &nbsp; Sunset <span class="sunset"></span> PM</div>
+        <div class="forecast">
+            <!--
             HERE PUT THE FORECAST
         -->
+        </div>
     </div>
-    <div class="byCity"><button>Get by city</button></div>
-    <div class="byZIP"><button>Get by ZIP</button></div>
-
     <footer>
-        <hr>
-        2016 &copy; Thorgal Aegirsson
+        <hr> 2016 &copy; Thorgal Aegirsson
     </footer>
 
     <div class="settings">
@@ -59,4 +70,5 @@
         -->
     </div>
 </body>
+
 </html>

@@ -39,3 +39,46 @@
     "name": "Bensonhurst",
     "cod": 200
 }
+
+{
+    "coord": {
+        "lon": -73.99,
+        "lat": 40.6
+    },
+    "weather": [
+        {
+            "id": 202,
+            "main": "Thunderstorm",
+            "description": "thunderstorm with heavy rain",
+            "icon": "11d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 303.31,
+        "pressure": 1013,
+        "humidity": 36,
+        "temp_min": 300.15,
+        "temp_max": 306.48
+    },
+    "visibility": 16093,
+    "wind": {
+        "speed": 5.1,
+        "deg": 320
+    },
+    "clouds": {
+        "all": 75
+    },
+    "dt": 1469402618,
+    "sys": {
+        "type": 1,
+        "id": 1975,
+        "message": 0.0497,
+        "country": "US",
+        "sunrise": 1469353611,
+        "sunset": 1469405855
+    },
+    "id": 5108815,
+    "name": "Bensonhurst",
+    "cod": 200
+}
