@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(50,140,50);
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    text-align: center;
+    padding: 10px;
+
+}
+h1 {
+    color: rgb(50,50,150);
+    margin: 5px;
+}
+
+.searchPart {
+    margin-top: 10px;
+}
+footer {
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 1em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+button {
+    border: none;
+    background-color: lightgray;
+    height: 30px;
+    color: rgb(100,100,100);
+    font-weight: bold;
+}
+
+input {
+    height: 30px;
+    width: 300px;
+    border: 1px solid green;
+    padding-left: 5px;
+    background-color: rgb(240,240,240);
+    box-sizing: border-box;
+}
+#resultList>div {
+    /*border: 1px solid black;*/
+    margin: 10px 10%;
+    background-color: lightgray;
+    text-align: left;
+}
