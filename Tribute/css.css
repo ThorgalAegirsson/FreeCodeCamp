@@ -1,0 +1,51 @@
+body{
+    margin: 30px;
+}
+
+.myContainer{
+    background-color: lightpink;
+}
+
+img{
+    height:400px;
+}
+
+hr{
+    width: 70%;
+}
+.date{
+    font-weight: bold;
+}
+.pic img{
+    border: 1px solid red;
+}
+.images {
+    background-color: pink;
+    padding: 50px;
+}
+
+.footText {
+    color:gray;
+    font-size: 0.8em;
+}
+.row {
+    margin: 10px;
+}
+
+a{
+    font-weight: bold;
+    color: navy;
+}
+
+.outside {
+    font-size: 1.2em;
+    text-decoration: underline;
+    font-variant:  small-caps;
+}
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 6em;
+}
+.subTitle {
+    font-variant: small-caps;
+}
