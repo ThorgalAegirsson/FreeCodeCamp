@@ -43,6 +43,7 @@ var wikiAPI = (function () {
             options.callback = createCallback(k);
             var script = document.createElement('script');
             script.src = endpoint + '?' + queryStr(options);
+            console.log(script.src);
             var head = document.getElementsByTagName('head')[0];
             head.appendChild(script);
         };

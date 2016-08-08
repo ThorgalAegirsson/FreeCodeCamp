@@ -1,0 +1,81 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: monospace;
+}
+
+.channel {
+    width: 250px;
+    height: 250px;
+    padding: 15px;
+    display: inline;
+    float: left;
+    margin: 10px;
+    background-color: gray;
+    color: black;
+}
+
+.streaming {
+    background-color: green;
+}
+
+.online {
+    font-weight: bold;
+}
+
+.channel>img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#userContainer {
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.channel>span {
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.toolbar>p>span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.toolbar>input {
+    font-size: 1.2em;
+}
+
+.hide {
+    display: none;
+}
+
+.title {
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
+.subtitle {
+    margin-top: 5px;
+}
