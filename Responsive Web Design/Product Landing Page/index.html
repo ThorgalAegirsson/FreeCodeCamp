@@ -1,41 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Product Landing Page</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <title>Product Landing Page</title>
+    </head>
 
-<body>
-    <header id="header">
-        <img src="logo.gif" alt="logo" id="header-img">
-        <nav id="nav-bar">
-            <a href="#video" class="nav-link">Video presentation</a>
-            <a href="description" class="nav-link">About product</a>
-            <a href="form" class="nav-link">Sign up</a>
-        </nav>
-    </header>
-    <main>
-        <section class="video">
-            <video id="video" src="">This browser doesn't support videos. What is it? 1995?</video>
-        </section>
-        <section id="description">
-            Our product is so awesome that we're speechless
-        </section>
-        <section class="form">
-            Sign up for our newsletter
-            <form action="https://www.freecodecamp.com/email-submit" id="form">
-                <input type="email" id="email" placeholder="Enter your email">
-                <input type="submit" id="submit" value="Submit">
-            </form>
-        </section>
-    </main>
-    <footer>
-        2018 &copy; Radek Szumski
-    </footer>
-</body>
+    <body>
+        <header id="header">
+            <img src="https://esar.us/images/logo.gif" alt="logo" id="header-img">
+            <nav id="nav-bar">
+                <ul>
+                    <li>
+                        <a href="#form" class="nav-link">Sign up</a>
+                    </li>
+                    <li>
+                        <a href="#description" class="nav-link">About product</a>
+                    </li>
+                    <li>
+                        <a href="#video" class="nav-link">Video presentation</a>
+                    </li>
+                    <li>
+                        <a href="#pricing" class="nav-link">Pricing</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="description">
+                <p>Our product is so awesome that we're speechless. Here's a little bit of description:</p>
+                <p>
+                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere repudiandae a blanditiis repellendus deleniti nobis sit reiciendis neque eveniet nulla ipsa, voluptates fuga. Ipsum, nihil maxime voluptatem repellat temporibus dignissimos?</span>
+                    <span>Obcaecati ea corporis possimus harum facilis laudantium. Incidunt est cumque illum sed culpa porro earum consequuntur soluta distinctio, natus illo fugit delectus, unde, veritatis eos sequi ullam. Maiores, dolorem expedita.</span>
+                    <span>Amet mollitia porro dolorem illum vitae doloremque quos eius dignissimos debitis, repudiandae, velit illo tempore. Quasi voluptates expedita ducimus suscipit eveniet, perspiciatis magnam? Amet ipsum officia, dolores neque expedita adipisci.</span>
+                    <span>Quis dignissimos, facilis accusamus quod quasi optio similique! Perspiciatis doloribus quae quidem maxime blanditiis nulla fuga, quasi, iusto, praesentium placeat eligendi. Voluptatibus asperiores quos sed odio veritatis delectus assumenda commodi!</span>
+                    <span>Laborum tenetur iusto magni ab, nihil, dolores voluptas pariatur sapiente eligendi labore esse corporis laudantium vel ducimus obcaecati in incidunt ex. Nobis voluptas id aliquid cumque tenetur at voluptatibus unde.</span>
+                </p>
+                
+            </section>
+            <section class="video">
+                <p>Here's how it works</p>
+                <iframe width="710" height="399" id="video" src="https://www.youtube.com/embed/6ilx_3islIk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </section>
+            <section id="pricing">
+                <div class="product">
+                    <h1>Product 1</h1>
+                    <div class="descr">
+                        Most popular option. Includes:
+                        <ul>
+                            <li>Option 1</li>
+                            <li>Option 2</li>
+                            <li>Option 3</li>
+                        </ul>
+                    </div>
+                    <div class="price">$50</div>
+                    <div class="buy"><button>Buy it now</button></div>
+                </div>
+                <div class="product">
+                    <h1>Product 2</h1>
+                    <div class="descr">
+                        The best option for small teams. Includes all from Product 1 plus:
+                        <ul>
+                            <li>Option 4</li>
+                            <li>Option 5</li>
+                            <li>Option 6</li>
+                        </ul>
+                    </div>
+                    <div class="price">$150</div>
+                    <div class="buy"><button>Buy it now</button></div>
+                </div>
+                <div class="product">
+                    <h1>Product 3</h1>
+                    <div class="descr">
+                        Made for large teams. Includes everything from Product 2 and more:
+                        <ul>
+                            <li>Option 7</li>
+                            <li>Option 8</li>
+                            <li>Option 9</li>
+                        </ul>
+                    </div>
+                    <div class="price">$500</div>
+                    <div class="buy"><button>Buy it now</button></div>
+                </div>
+            </section>
+            <section class="form">
+                Would you like to receive our newsletter?
+                <form action="https://www.freecodecamp.com/email-submit" id="form">
+                    <input type="email" id="email" placeholder="Enter your email">
+                    <input type="submit" id="submit" value="Sign up">
+                </form>
+            </section>
+        </main>
+        <footer>
+            <hr>
+            2018 &copy; Radek Szumski
+        </footer>
+    </body>
 
 </html>
