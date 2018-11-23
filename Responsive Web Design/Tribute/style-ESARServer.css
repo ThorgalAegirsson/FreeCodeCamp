@@ -1,0 +1,133 @@
+html {
+    font-size: 24px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    background-color: lightpink;
+    padding: 20px;
+    margin: 30px;    
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.75);
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 6em;
+    margin: 20px;
+    color: rgb(61, 48, 182);
+    text-transform: uppercase;
+    text-shadow: 5px 8px 6px rgba(150, 150, 150, 0.75);
+}
+
+header h2 {
+    font-variant: small-caps;
+    margin: 5px 0 30px 0;
+}
+
+.images {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.15)
+}
+.inner-images {
+    width: 100%;
+    margin: 0 auto;
+}
+#image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+#img-caption {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 15px;
+}
+
+.other-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    gap: 15px;
+    margin: 15px;
+}
+
+.other-images img {
+    max-height: 400px;
+    /* border:  1px solid red;     */
+    box-shadow: 10px 10px 20px -5px rgba(0,0,0,0.75);
+}
+
+hr{
+    width: 70%;
+    margin: 0 auto;
+    border : 0;
+    height: 1px; 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); 
+}
+
+article {
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+article ul {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.date{
+    font-weight: bold;
+}
+footer {
+    text-align: center;
+    margin: 10px;
+}
+
+.footer {
+    font-size: 0.6rem;
+    width: 90%;
+    color: gray;
+}
+
+a {
+    color: inherit;
+    font-variant: small-caps;
+}
+
+@media (max-width: 1024px) {
+    .other-images {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 4em;
+    }
+}

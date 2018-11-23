@@ -1,0 +1,19 @@
+html, body {
+    background-color: rgb(44, 44, 44);
+    font-size: 20px;
+    color: white;
+}
+
+#nav-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+footer {
+    
+}
+
+@media and (max-width: 800px){
+
+}

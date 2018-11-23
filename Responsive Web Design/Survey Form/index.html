@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=       , initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <title>Survey form</title>
+    </head>
+
+    <body>
+        <header>
+            <h1 id="title">Web Developer Survey</h1>
+        </header>
+        <main>
+            <div class="wrapper">
+                <p id="description">Tell us about your expectations as a developer</p>
+                    <form action="#" id="survey-form">
+                        <div class="section">
+                            <label for="name" id="name-label" class="label-short">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="section">
+                            <label for="email" id="email-label" class="label-short">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="section">
+                            <label for="number" id="number-label" class="label-short">Age</label>
+                            <input type="number" min="18" max="120" name="number" id="number" placeholder="Age"
+                                required>
+                        </div>
+                        <div class="section">
+                            <label for="dropdown" class="label-short">Sex</label>
+                            <select name="dropdown" id="dropdown">
+                                <option disabled selected value="">Select your sex</option>
+                                <option value="man">man</option>
+                                <option value="woman">woman</option>
+                            </select>
+                        </div>
+                        <div class="section">
+                            <label for="radioBtns" class='label-long'>Where would you rather live?
+                            </label>
+                            <div class="options">
+                                <input type="radio" name="radioBtns" id="" value="value1">Dublin
+                                <input type="radio" name="radioBtns" id="" value="value2">London
+                                <input type="radio" name="radioBtns" id="" value="value3">New York City
+                            </div>
+                        </div>
+                        <div class="section">
+                            <label for="checkBoxes" class='label-long'>What tech are you interested in?
+                            </label>
+                            <div class="options">
+                                <input type="checkbox" name="checkBoxes" id="" value="frontend">Front End
+                                <input type="checkbox" name="checkBoxes" id="" value="backend">Back End
+                                <input type="checkbox" name="checkBoxes" id="" value="fullstack">Full Stack
+                            </div>
+                        </div>
+                        <div class="section">
+                            <label for="textarea" class='label-long'>A few words about you...</label>
+                            <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Say something about yourself"></textarea>
+                        </div>
+                        <div class="section">
+                            <button type="submit" id="submit">Submit</button>
+                        </div>
+                    </form>
+            </div>
+        </main>
+        <footer class="footer">
+            <hr class="footer">
+            2018 &copy; Radek Szumski
+        </footer>
+    </body>
+
+</html>
