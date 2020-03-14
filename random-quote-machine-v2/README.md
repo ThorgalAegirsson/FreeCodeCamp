@@ -1,1 +1,0 @@
-## Random Quote Machine - React version for fCC
